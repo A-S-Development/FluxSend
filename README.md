@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+FluxSend
+
+FluxSend is an app intended to manipulate the two way data streaming capabilities of the WebRtc protocol layer. This app will simply allow two clients (either desktop + mobile) excluding headless clients to connect and share between themselves data. The data will be of the form PDF, Streaming Audio, Streaming Video, Image formats (jpg, img, bit)
 
 ## Getting Started
 
@@ -6,12 +8,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
