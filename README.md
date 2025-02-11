@@ -1,13 +1,19 @@
-FluxSend
+## FLUXSEND
 
 FluxSend is an app intended to manipulate the two way data streaming capabilities of the WebRtc protocol layer. This app will simply allow two clients (either desktop + mobile) excluding headless clients to connect and share between themselves data. The data will be of the form PDF, Streaming Audio, Streaming Video, Image formats (jpg, img, bit)
 
 ## Getting Started
+First, run: `npm install`
 
-First, run the development server:
+Second, In a seperate terminal tab run the docker DB: 
+```bash
+    docker compose up
+```
+
+Third, run the development server:
 
 ```bash
-npm run dev
+    npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -16,16 +22,33 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
+## Tools
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 - https://webrtc.org/getting-started/overview - learn about streaming data through the web browser.
+
 (clients will connect with the browser, the browser runs on your operating system, your operating system gives your browser access to the various media hardware as objects that the browser can control. You then send streaming data over the network to another webrtc capable client. If the client is not capable, then hardware media capabilities are not possible.)
 )
+
+- [Postgres DB + Docker](https://hub.docker.com/_/postgres)
+
+Docker PG
+
+This project uses docker to host a shared db. A docker container runs locally through docker hub and the container makes available PG, such that no developer local computer secondary storage is in use.
+
+`Container` - CloudOS environment
+
+`Image` - terminal instructions to run software in the Container OS environment
+
+`Volume` - cloud based storage of data
+
+  `docker compose up`
+
+NEXT JS - Custom Server
+Next JS uses Node under the hood, but is lightweight node, a custom server 
+on Next JS can be implemented to grant access to backed server actions such as capturing user information via postgres, enabling websockets on the backend to 
+facilitate data transfer on the frontend. (Not entirely sure about that last use case, however I digress.)
 
 ## Deploy on Vercel
 
