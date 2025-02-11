@@ -16,6 +16,11 @@ Third, run the development server:
     npm run dev
 ```
 
+Fourth, In a third tab run the custom server to connect with backend services:
+```bash
+    npm run dev-server
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
@@ -33,24 +38,27 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 - [Postgres DB + Docker](https://hub.docker.com/_/postgres)
 
-Docker PG
-
 This project uses docker to host a shared db. A docker container runs locally through docker hub and the container makes available PG, such that no developer local computer secondary storage is in use.
 
-`Container` - CloudOS environment
+```bash
+Docker Terminology 
 
-`Image` - terminal instructions to run software in the Container OS environment
+Container - cloudOS environment
 
-`Volume` - cloud based storage of data
+Image - terminal instructions to run software in the Container OS environment
 
-  `docker compose up`
+Volume - cloud based storage of data
 
+```
 NEXT JS - Custom Server
 Next JS uses Node under the hood, but is lightweight node, a custom server 
 on Next JS can be implemented to grant access to backed server actions such as capturing user information via postgres, enabling websockets on the backend to 
 facilitate data transfer on the frontend. (Not entirely sure about that last use case, however I digress.)
 
-## Deploy on Vercel
+## Because we are using Custom server, Vercel can't host this part
+https://www.youtube.com/watch?v=HIb4Ucs_foQ
+
+## Deploy Next JS on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 

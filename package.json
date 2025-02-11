@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev-server": "node server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@auth/pg-adapter": "^1.7.4",
+    "@next/env": "^15.1.7",
     "next": "15.1.6",
     "pg": "^8.13.1",
     "react": "^19.0.0",
