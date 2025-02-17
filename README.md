@@ -40,6 +40,8 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 This project uses docker to host a shared db. A docker container runs locally through docker hub and the container makes available PG, such that no developer local computer secondary storage is in use.
 
+to connect via docker container:  `psql -U user`
+
 ```bash
 Docker Terminology 
 

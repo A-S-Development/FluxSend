@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev-server": "node server.js",
+    "dev-server": "node --env-file=.env server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,7 +12,9 @@
   "dependencies": {
     "@auth/pg-adapter": "^1.7.4",
     "@next/env": "^15.1.7",
+    "express": "^4.21.2",
     "next": "15.1.6",
+    "next-auth": "^4.24.11",
     "pg": "^8.13.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
