@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
+import '../styles/globals.css';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import { Stack, Container } from '@mui/material';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,7 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Stack sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+          <Header />
+          <Container sx={{ flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center', bgcolor: '#1a1a1a', height: '90vh', paddingBottom: '20vh' }}>{children}</Container>
+          <Footer />
+        </Stack>
+      </body>
     </html>
   );
 }

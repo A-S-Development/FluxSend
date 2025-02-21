@@ -1,10 +1,10 @@
 import { Button, TextField, Stack } from '@mui/material';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const videoHomePage: React.FC = () => {
   return (
     <Stack sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontSize: '35px', height: '50%' }}>
-      <Link to="/videoSession" style={{ textDecoration: 'none' }}>
+      <Link href="/video/session" style={{ textDecoration: 'none' }}>
         <Button variant="contained" color="primary" sx={{ marginBottom: '20px', width: '400px', fontSize: '17px', bgcolor: 'white', color: 'black', fontWeight: 'bold' }}>
           GENERATE VIDEO SESSION
         </Button>
