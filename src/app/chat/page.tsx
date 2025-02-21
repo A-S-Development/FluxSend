@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, TextField, Stack } from '@mui/material';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const chatHomePage: React.FC = () => {
   return (
     <Stack sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontSize: '35px', height: '50%' }}>
-      <Link to="/chatSession" style={{ textDecoration: 'none' }}>
+      <Link href="/chat/session" style={{ textDecoration: 'none' }}>
         <Button variant="contained" color="primary" sx={{ marginBottom: '20px', width: '400px', fontSize: '17px', bgcolor: 'white', color: 'black', fontWeight: 'bold' }}>
           GENERATE CHAT SESSION
         </Button>
