@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, TextField, Stack } from '@mui/material';
 import Link from 'next/link';
 
-const chatHomePage: React.FC = () => {
+const ChatHomePage: React.FC = () => {
   return (
     <Stack sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontSize: '35px', height: '50%' }}>
       <Link href="/chat/session" style={{ textDecoration: 'none' }}>
@@ -19,4 +19,4 @@ const chatHomePage: React.FC = () => {
     </Stack>
   );
 };
-export default chatHomePage;
+export default ChatHomePage;
