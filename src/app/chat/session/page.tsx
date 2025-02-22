@@ -1,6 +1,6 @@
 import { Button, TextField, Stack, Box } from '@mui/material';
 
-const chatSession: React.FC = () => {
+const ChatSession: React.FC = () => {
   return (
     <Stack sx={{ height: '60vh', width: '100%' }}>
       <Box sx={{ bgcolor: 'black', height: '5%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
@@ -20,4 +20,4 @@ const chatSession: React.FC = () => {
     </Stack>
   );
 };
-export default chatSession;
+export default ChatSession;

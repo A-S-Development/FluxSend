@@ -1,7 +1,7 @@
 import { Button, TextField, Stack } from '@mui/material';
 import Link from 'next/link';
 
-const videoHomePage: React.FC = () => {
+const VideoHomePage: React.FC = () => {
   return (
     <Stack sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontSize: '35px', height: '50%' }}>
       <Link href="/video/session" style={{ textDecoration: 'none' }}>
@@ -18,4 +18,4 @@ const videoHomePage: React.FC = () => {
     </Stack>
   );
 };
-export default videoHomePage;
+export default VideoHomePage;
