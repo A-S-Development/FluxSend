@@ -4,18 +4,6 @@ FluxSend is an app intended to manipulate the two way data streaming capabilitie
 
 ## Getting Started
 
-<!-- tempp
-1. set the script as an executable with the comand below
-chmod +x ssl.sh
-
-2. Run the following to create a SSL certificate
-./ssl.sh localhost
-
-
-
-
- -->
-
 First, run:
 
 ```bash
