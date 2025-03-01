@@ -91,7 +91,7 @@ const ChatSession: React.FC = () => {
     }
   }
 
-  const populateMessageQueu = (sendMessages, fromMessages) => {
+  const populateMessageQueue = (sendMessages, fromMessages) => {
       //Insertion Sort - O(n^2) runtime
       const temp = sendMessages.concat(fromMessages);
 

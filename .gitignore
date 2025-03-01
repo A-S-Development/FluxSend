@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+cert.conf
+csr.conf
+rootCA.crt
+server.crt
+server.csr
+server.key
+server.key.org
