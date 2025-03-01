@@ -19,15 +19,11 @@ const ChatSession: React.FC = () => {
       "to": "+48537425314",
       "date created": "Fri Feb 28 2025 17:41:12 GMT-0500",
       "status": "queued",
-      "sid": "SM5e58af13531b38cb2b02352d2f9edall",
       "date sent": null, 
       "messaging service sid": null,
       "error code": null,
       "price unit": "USD",
-      "api_version": "2010-04-01", 
-      "subresource uris": [{
-        "media": "/2010-04-01/Accounts/AC3fe73880522d6laa1837feef9737df02/Messages/SM5e58af13531b38cb2b02352d2f9edall/Media.json" 
-      }]
+      "api_version": "2010-04-01"
     } ,  
     { 
       "body": "how are you doing?",
@@ -41,15 +37,11 @@ const ChatSession: React.FC = () => {
       "to": "+48537425314",
       "date created": "Fri Feb 28 2025 17:43:56 GMT-0500",
       "status": "queued",
-      "sid": "SM5e58af13531b38cb2b02352d2f9edall",
       "date sent": null, 
       "messaging service sid": null,
       "error code": null,
       "price unit": "USD",
-      "api_version": "2010-04-01", 
-      "subresource uris": [{
-        "media": "/2010-04-01/Accounts/AC3fe73880522d6laa1837feef9737df02/Messages/SM5e58af13531b38cb2b02352d2f9edall/Media.json" 
-      }]
+      "api_version": "2010-04-01"
     } 
   ]
 
@@ -65,15 +57,11 @@ const ChatSession: React.FC = () => {
     "to": "+48537425314",
     "date created": "Fri Feb 28 2025 17:42:06 GMT-0500",
     "status": "queued",
-    "sid": "SM5e58af13531b38cb2b02352d2f9edall",
     "date sent": null, 
     "messaging service sid": null,
     "error code": null,
     "price unit": "USD",
-    "api_version": "2010-04-01", 
-    "subresource uris": [{
-      "media": "/2010-04-01/Accounts/AC3fe73880522d6laa1837feef9737df02/Messages/SM5e58af13531b38cb2b02352d2f9edall/Media.json" 
-    }]
+    "api_version": "2010-04-01"
   } ]
   
   const determineSender = (message) => {
