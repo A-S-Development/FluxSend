@@ -1,8 +1,16 @@
 import express from 'express';
 import pkg from 'pg';
+import https from 'https';
+import fs from 'fs';
+import { parse } from 'url';
+import next from 'next';
 
 const { Client } = pkg;
-const app = express();
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
+
+const expressApp = express();
 const port = parseInt(process.env.PORT || '3001', 10);
 
 //DB: fluxsend_db
@@ -16,7 +24,14 @@ const client = new Client({
   connectionTimeoutMillis: 0,
 });
 
+//Load SSL certificates and key
+const sslOptions = {
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.crt'),
+};
+
 console.log(client);
+
 const createDB = async () => {
   try {
     await client.connect();
@@ -35,15 +50,15 @@ const createDB = async () => {
 //   await client.end()
 // }
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.prepare().then(() => {
+  expressApp.all('*', (req, res) => {
+    const parsedUrl = parse(req.url, true);
+    return handle(req, res, parsedUrl);
+  });
 
-app.listen(port, async () => {
-  await createDB();
-  console.log(`Flux listening on port ${port}`);
-});
-
-app.all('*', (req, res) => {
-  return handle(req, res);
+  // Start HTTPS server
+  https.createServer(sslOptions, expressApp).listen(port, async () => {
+    await createDB();
+    console.log(`Flux is securely listening on https://localhost:${port}`);
+  });
 });
