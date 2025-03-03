@@ -4,6 +4,7 @@ import https from 'https';
 import fs from 'fs';
 import { parse } from 'url';
 import next from 'next';
+import { Server as SocketIOServer } from 'socket.io';
 
 const { Client } = pkg;
 const dev = process.env.NODE_ENV !== 'production';
@@ -44,20 +45,29 @@ const createDB = async () => {
   }
 };
 
-// const testConnection = async () => {
-//   await client.connect()
-//   const result = await client.query('SELECT NOW()')
-//   await client.end()
-// }
-
 app.prepare().then(() => {
   expressApp.all('*', (req, res) => {
     const parsedUrl = parse(req.url, true);
     return handle(req, res, parsedUrl);
   });
 
-  // Start HTTPS server
-  https.createServer(sslOptions, expressApp).listen(port, async () => {
+  const server = https.createServer(sslOptions, expressApp);
+
+  const io = new SocketIOServer(server);
+  io.on('connection', (socket) => {
+    console.log('a user connected');
+
+    socket.on('signal', (data) => {
+      console.log('Received signaling data:', data);
+      socket.broadcast.emit('signal', data);
+    });
+
+    socket.on('disconnect', () => {
+      console.log('user disconnected');
+    });
+  });
+
+  server.listen(port, async () => {
     await createDB();
     console.log(`Flux is securely listening on https://localhost:${port}`);
   });
