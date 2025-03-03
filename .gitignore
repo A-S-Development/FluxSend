@@ -40,6 +40,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+cert.conf
+csr.conf
+rootCA.crt
+server.crt
+server.csr
+server.key
+server.key.org
 # certs/
 *.key
 *.crt
@@ -48,3 +55,4 @@ next-env.d.ts
 *.conf
 
 openssl/
+
