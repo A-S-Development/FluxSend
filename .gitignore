@@ -47,3 +47,12 @@ server.crt
 server.csr
 server.key
 server.key.org
+# certs/
+*.key
+*.crt
+*.pem
+*.csr
+*.conf
+
+openssl/
+
